@@ -1,2 +1,4 @@
-package com.example.androidinterview.strings;public class Anagram {
+package com.example.androidinterview.strings;
+
+public class Anagram {
 }

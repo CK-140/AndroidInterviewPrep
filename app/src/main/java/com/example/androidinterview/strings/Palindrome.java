@@ -2,16 +2,17 @@ package com.example.androidinterview.strings;
 
 public class Palindrome {
 
-    public static void main(String args[]){
-        String str = "Level";
+    public static void main(String args[]) {
+        String str = "level";
 
         // Convert the string to lowercase
         str = str.toLowerCase();
-        boolean A = isPalindrome(str);
+        boolean A = isPalindromeTwoPointer(str);
         System.out.println(A);
     }
+
     //Naive method
-    public static boolean isPalindrome(String str){
+    public static boolean isPalindrome(String str) {
         // Initializing an empty string to store the reverse
         // of the original str
         String rev = "";
@@ -33,5 +34,19 @@ public class Palindrome {
 
 
     //Two pointer method
+    public static boolean isPalindromeTwoPointer(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        while(left<right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+                left++;
+                right--;
+
+        }
+        return true;
+    }
 
 }
