@@ -12,6 +12,10 @@ public class Palindrome {
     }
 
     //Naive method
+    //The time complexity of the given code is O(n),
+    // where n is the length of the input string.
+    // This is because the for loop iterates through each
+    // character in the string once to create the reverse string.
     public static boolean isPalindrome(String str) {
         // Initializing an empty string to store the reverse
         // of the original str
@@ -34,6 +38,11 @@ public class Palindrome {
 
 
     //Two pointer method
+    //The time complexity of the given code is O(n),
+    // where n is the length of the input string.
+    // This is because the while loop iterates through half of the string to check if it is a palindrome.
+    // Since we only check half of the string, the number of iterations is proportional to n/2, which is O(n).
+
     public static boolean isPalindromeTwoPointer(String str) {
         int left = 0;
         int right = str.length() - 1;

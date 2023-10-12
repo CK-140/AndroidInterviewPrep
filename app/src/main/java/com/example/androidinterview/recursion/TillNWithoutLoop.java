@@ -1,6 +1,8 @@
 package com.example.androidinterview.recursion;
 
 public class TillNWithoutLoop {
+
+    //Time Complexity: O(n)
     static void printNos(int n)
     {
         if (n > 0) {
