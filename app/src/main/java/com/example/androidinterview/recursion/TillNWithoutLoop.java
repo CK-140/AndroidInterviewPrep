@@ -7,7 +7,7 @@ public class TillNWithoutLoop {
     {
         if (n > 0) {
             printNos(n - 1);
-            System.out.print(n + " ");
+            System.out.print(n + " ");// put this above printNos call(line9) to print N to 1
         }
         return;
     }
