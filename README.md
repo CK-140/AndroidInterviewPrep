@@ -1,3 +1,9 @@
+Credits to:
+Codetutor: https://www.youtube.com/@Codetutor-DemystifyCoding
+The screenshots for launch mode explanation are from Codetutor's launch modes playlist, it is the best explanation of launch modes on YT imo: https://www.youtube.com/watch?v=m8sf0UkJkxo&list=PLfuE3hOAeWhY8fkzCluHakmK9A3bJsGR0 
+
+Philipp Lackner: https://www.youtube.com/@PhilippLackner
+
 Activity and Fragments-
 
 -Activity Lifecycle:
