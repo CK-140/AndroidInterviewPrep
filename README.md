@@ -30,12 +30,15 @@ of A are called, after which onStop()>onDestroy() for B are called.
 -Important Note: 
 
 When a user taps or gestures Back from a root launcher activity, the system handles the event differently depending on the version of Android that the device is running.
-System behavior on Android 11 and lower
-The system finishes the activity.
-System behavior on Android 12 and higher
-The system moves the activity and its task to the background instead of finishing the activity. This behavior matches the default system behavior when navigating out of an app using the Home button or gesture.
+
+System behavior on Android 11 and lower: The system finishes the activity.
+
+System behavior on Android 12 and higher: The system moves the activity and its task to the background instead of finishing the activity. This behavior matches the default system behavior when navigating out of an app using the Home button or gesture.
+
 In most cases, this behavior means that users can more quickly resume your app from a warm state, instead of having to completely restart the app from a cold state.
+
 If you need to provide custom back navigation, we recommend using the AndroidX Activity APIs rather than overriding onBackPressed(). The AndroidX Activity APIs automatically defer to the appropriate system behavior if there are no components intercepting the system Back tap.
+
 However, if your app overrides onBackPressed() to handle Back navigation and finish the activity, update your implementation to call through to super.onBackPressed() instead of finishing. Calling super.onBackPressed() moves the activity and its task to the background when appropriate and provides a more consistent navigation experience for users across apps.
 
 
