@@ -7,6 +7,7 @@ On Opening app and pressing back button
 ![image22](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/5a728514-2e8e-46e5-a214-b5e81897609c)
 
 On going back to app:
+
 ![image8](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/1d91abf9-1649-47bb-942c-b2f3f30ff390)
 
 
@@ -56,6 +57,7 @@ How to define launch mode: 1. Manifest 2. Intent flags
 Official definition-
 The system creates a new instance of the activity in the task it was started from and routes the intent to it. The activity can be instantiated multiple times, each instance can belong to different tasks, and one task can have multiple instances.
 
+
 ![image12](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/166120c9-a0ba-4ed7-ac0d-634ccfc5e168)
 
 
@@ -86,10 +88,10 @@ Here there is a differentiating factor that can change the behavior, it depends 
 Consider here, Activity B is declared as SingleTask, the stack is A>B>C>D, Now I will launch B from D
 
 After launching B
+
 ![image19](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/fc83e217-229a-41a7-826d-ee16ce04379a)
 
-We can see, C and D are popped, B is retained which is on top of the stack
- Official definition is confusing, it says that B should launch in new Task (This is where affinity comes in, which basically means what is the preference of the Activity, in which Task it wants to get launched, By default, all the activities from the same app have an affinity for each other: they "prefer" to be in the same task.)
+We can see, C and D are popped, B is retained which is on top of the stack, Official definition is confusing, it says that B should launch in new Task (This is where affinity comes in, which basically means what is the preference of the Activity, in which Task it wants to get launched, By default, all the activities from the same app have an affinity for each other: they "prefer" to be in the same task.)
 
 By default the affinity is associated with the current package, to change this affinity we can change it in manifest by specifying a different package using android:TaskAffinity for that Activity.
 
@@ -100,13 +102,14 @@ Here’s what will happen if I have SingleTask with affinity(Not default package
 
 
 If now I launch Activity C from B, it will launch in the same task as B’s because Bis root Activity in the new task and by default new activity launched will share affinity with the root activity in that task, show below:
+
 ![image18](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/1f5f0e1e-1f9e-4677-b606-2440b59754dc)
 
 
 
 Now if we bring task-1 to foreground again from recent apps menu, and launch C and D, they will launch again in Task-1, It will look something like this:
-![image2](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/f4d873c4-f184-4bf5-b639-f3b293f13b56)
 
+![image2](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/f4d873c4-f184-4bf5-b639-f3b293f13b56)
 
 
 
@@ -130,6 +133,7 @@ The task with the highest priority (i.e., the one that has the same affinity as 
 -Need not be at the root of task
 -Will not be launched in new task
 -Only single Instance across tasks
+
 ![image5](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/c92b367d-674c-4cfa-a07b-8b20c86a8d2d)
 
 
@@ -139,6 +143,7 @@ The task with the highest priority (i.e., the one that has the same affinity as 
 -SingleInstance Launch Mode
 
 Activity declared as SingleInstance  is always the single and only activity in it’s task, any other activity started from it will open in a separate task, the concept of affinity only makes one difference in this case, the new task is shown separately in recent apps, otherwise the new task is not shown differently by default in recent apps
+
 ![image9](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/6caa7a13-6441-4ede-9462-2573c85710f3)
 
 
@@ -179,6 +184,7 @@ Ignore onViewStateRestored() as it is not a lifecycle method
 
 
 Now If I finish A and navigate to Activity B, this is what the lifecycle calls will look like:
+
 ![image14](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/561b9589-c5e3-4282-972c-2581bef99b47)
 
 
@@ -225,6 +231,7 @@ Caching in these libraries work at both memory and disk level to optimize image 
 Context in android:       
 
 Current state of app’s environment
+
 ![image3](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/e9cdea6b-b3bc-47c6-9727-83f8e46da789)
 
 
@@ -353,12 +360,14 @@ Singleton pattern:
 Best way is to declare a static nested class, it will be thread safe as well.
 
 Parcelable vs Serializable: 
+
 ![image4](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/031eee95-9f6d-4069-ac74-fe269529d2f0)
 
 Parcelable is run time
 Serializable in compile time + reflection(metaprogrammming i.e private methods can be accessed)
 
 Why use bundle instead of map to pass data in intents:
+
 ![image7](https://github.com/CK-140/AndroidInterviewPrep/assets/79191512/6119ef9a-43ff-4f83-9e92-dd212ff3b1f0)
 
 
